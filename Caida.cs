@@ -95,7 +95,7 @@ public partial class Caida : Area2D
 			Position = new Vector2(Position.X, -40);
 			imagen.Hframes = 1;
 			imagen.Vframes = 1;
-			imagen.Frame = 1;
+			imagen.Frame = 0;
 			imagen.RotationDegrees = 0;
 			imagen.Scale = new Vector2(0.1f, 0.1f);
 			colision.Disabled = false;
