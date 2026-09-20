@@ -84,6 +84,7 @@ popup/item_1/separator = true
 popup/item_2/id = 2
 
 [node name="VentanaMenu" type="Panel" parent="CanvasLayer/Control" unique_id=1426994309]
+visible = false
 z_index = 100
 layout_mode = 0
 offset_left = 230.0
