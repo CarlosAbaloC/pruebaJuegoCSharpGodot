@@ -1,0 +1,109 @@
+[gd_scene format=3 uid="uid://c0yefkpee3phs"]
+
+[ext_resource type="Script" uid="uid://uafygyfr2ynb" path="res://EscenaJuego.cs" id="1_2rcfl"]
+[ext_resource type="Script" uid="uid://c3p532xd74rb2" path="res://Personaje.cs" id="1_4c8py"]
+[ext_resource type="Texture2D" uid="uid://eny4382v1lpb" path="res://assets/Personajes/personaje.png" id="2_4kdet"]
+[ext_resource type="PackedScene" uid="uid://bvj1r0dl6141k" path="res://enemigo.tscn" id="4_1qafh"]
+[ext_resource type="PackedScene" uid="uid://bekaw7fljcvop" path="res://item.tscn" id="7_2rcfl"]
+[ext_resource type="Texture2D" uid="uid://c2r7x61klagdc" path="res://assets/Personajes/fondo1.jpg" id="7_dti2p"]
+[ext_resource type="PackedScene" uid="uid://cosvdgk0jumop" path="res://menu_pause.tscn" id="8_2rcfl"]
+[ext_resource type="AudioStream" uid="uid://ccifucucv5unm" path="res://assets/sonido/chieuk-coin-257878.mp3" id="9_24x7o"]
+[ext_resource type="PackedScene" uid="uid://cpab35p7nvqxn" path="res://Interfaz.tscn" id="9_qkblp"]
+[ext_resource type="AudioStream" uid="uid://dii85c5k3oemr" path="res://assets/sonido/universfield-punch-03-352040.mp3" id="10_24x7o"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ntjof"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_owrsl"]
+custom_solver_bias = 1.0
+size = Vector2(46, 44)
+
+[node name="EscenaJuego" type="Node2D" unique_id=1895663836]
+process_mode = 3
+script = ExtResource("1_2rcfl")
+
+[node name="Personaje" type="Area2D" parent="." unique_id=950854307]
+light_mask = 7
+position = Vector2(499, 300)
+collision_mask = 15
+script = ExtResource("1_4c8py")
+
+[node name="Sprite2D" type="Sprite2D" parent="Personaje" unique_id=1643187367]
+light_mask = 15
+scale = Vector2(1.06, 1.06)
+texture = ExtResource("2_4kdet")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Personaje" unique_id=1737768286]
+light_mask = 15
+sprite_frames = SubResource("SpriteFrames_ntjof")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Personaje" unique_id=622839408]
+light_mask = 7
+position = Vector2(-2, -2)
+shape = SubResource("RectangleShape2D_owrsl")
+
+[node name="Enemigo" parent="." unique_id=1391459951 instance=ExtResource("4_1qafh")]
+position = Vector2(600, 300)
+
+[node name="Item" parent="." unique_id=1412672903 instance=ExtResource("7_2rcfl")]
+position = Vector2(196, 200)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1572781595]
+
+[node name="Interfaz" parent="CanvasLayer" unique_id=365514464 instance=ExtResource("9_qkblp")]
+
+[node name="Item2" parent="." unique_id=1068696500 instance=ExtResource("7_2rcfl")]
+position = Vector2(702, 299)
+
+[node name="Item3" parent="." unique_id=1193272270 instance=ExtResource("7_2rcfl")]
+position = Vector2(709, 124)
+
+[node name="Item4" parent="." unique_id=1387592030 instance=ExtResource("7_2rcfl")]
+position = Vector2(689, 511)
+
+[node name="Item5" parent="." unique_id=777765576 instance=ExtResource("7_2rcfl")]
+position = Vector2(549, 74)
+
+[node name="Item6" parent="." unique_id=1282283961 instance=ExtResource("7_2rcfl")]
+position = Vector2(143, 108)
+
+[node name="Item7" parent="." unique_id=527666870 instance=ExtResource("7_2rcfl")]
+position = Vector2(888, 191)
+
+[node name="Item8" parent="." unique_id=648018151 instance=ExtResource("7_2rcfl")]
+position = Vector2(338, 416)
+
+[node name="Item9" parent="." unique_id=1517817407 instance=ExtResource("7_2rcfl")]
+position = Vector2(374, 101)
+
+[node name="Item10" parent="." unique_id=90451288 instance=ExtResource("7_2rcfl")]
+position = Vector2(161, 492)
+
+[node name="Enemigo2" parent="." unique_id=772825044 instance=ExtResource("4_1qafh")]
+position = Vector2(468, 477)
+
+[node name="Timer" type="Timer" parent="." unique_id=1862255113]
+wait_time = 5.0
+autostart = true
+
+[node name="CanvaFondo" type="CanvasLayer" parent="." unique_id=826952097]
+layer = -10000
+
+[node name="Fondo" type="TextureRect" parent="CanvaFondo" unique_id=155920350]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_dti2p")
+
+[node name="MenuPause" parent="." unique_id=164848864 instance=ExtResource("8_2rcfl")]
+
+[node name="SonidoMoneda" type="AudioStreamPlayer" parent="." unique_id=663838868]
+stream = ExtResource("9_24x7o")
+bus = &"EfectosSonido"
+
+[node name="SonidoGolpe" type="AudioStreamPlayer" parent="." unique_id=1279163292]
+stream = ExtResource("10_24x7o")
+bus = &"EfectosSonido"
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

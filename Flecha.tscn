@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://0lcq37bmfiwy"]
+
+[ext_resource type="Texture2D" uid="uid://gv64oiv8utkh" path="res://assets/Personajes/flecha.png" id="1_kdqkq"]
+[ext_resource type="Script" uid="uid://dchk62taw4lty" path="res://Flecha.cs" id="1_qwhsl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ntjof"]
+size = Vector2(6, 25)
+
+[node name="Area2D" type="Area2D" unique_id=624995944]
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("1_qwhsl")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=402446316]
+rotation = -1.5707964
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_kdqkq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1309849782]
+light_mask = 33
+position = Vector2(0, -3.5)
+shape = SubResource("RectangleShape2D_ntjof")

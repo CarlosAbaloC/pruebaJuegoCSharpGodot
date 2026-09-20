@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cy20gblc0wxgb"]
+
+[ext_resource type="Script" uid="uid://qsvab448n5tc" path="res://Caida.cs" id="1_nn7f5"]
+[ext_resource type="Texture2D" uid="uid://gv64oiv8utkh" path="res://assets/Personajes/flecha.png" id="2_41byb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ntjof"]
+radius = 17.0
+
+[node name="Caida" type="Area2D" unique_id=1511941096]
+collision_layer = 4
+collision_mask = 5
+script = ExtResource("1_nn7f5")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=82013726]
+texture_filter = 1
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_41byb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1721454065]
+position = Vector2(3, 1)
+shape = SubResource("CircleShape2D_ntjof")

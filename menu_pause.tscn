@@ -1,0 +1,163 @@
+[gd_scene format=3 uid="uid://cosvdgk0jumop"]
+
+[ext_resource type="Script" uid="uid://byprdy04g4g8u" path="res://Control.cs" id="1_nhsed"]
+
+[sub_resource type="Theme" id="Theme_ntjof"]
+
+[node name="MenuPause" type="Node" unique_id=164848864]
+process_mode = 3
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1242548895]
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=1830436952]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_nhsed")
+
+[node name="TextoPuntos" type="Label" parent="CanvasLayer/Control" unique_id=1040297418]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 93.0
+offset_top = 20.0
+offset_right = 112.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Puntos:"
+
+[node name="Vidas" type="Label" parent="CanvasLayer/Control" unique_id=1161038683]
+layout_mode = 0
+offset_left = 996.0
+offset_top = 31.0
+offset_right = 1152.0
+offset_bottom = 54.0
+text = "Vidas: 5"
+horizontal_alignment = 2
+
+[node name="VirtualJoystick" type="VirtualJoystick" parent="CanvasLayer/Control" unique_id=1648641358]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 89.0
+offset_right = 111.0
+offset_bottom = 129.0
+visibility_mode = 1
+
+[node name="MenuBar" type="MenuBar" parent="CanvasLayer/Control" unique_id=1694268845]
+visible = false
+layout_mode = 0
+offset_left = 324.0
+offset_top = 4.0
+offset_right = 427.0
+offset_bottom = 44.0
+
+[node name="PopupMenu" type="PopupMenu" parent="CanvasLayer/Control/MenuBar" unique_id=1720402394]
+oversampling_override = 1.0
+size = Vector2i(105, 100)
+item_count = 3
+item_0/text = "Prueba1"
+item_0/id = 0
+item_0/disabled = true
+item_0/separator = true
+item_1/text = "Prueba2"
+item_1/checked = true
+item_1/id = 1
+item_2/text = "Prueba3"
+item_2/checkable = 2
+item_2/id = 2
+
+[node name="OptionButton" type="OptionButton" parent="CanvasLayer/Control" unique_id=1146214687]
+visible = false
+layout_mode = 0
+offset_right = 427.0
+offset_bottom = 249.0
+item_count = 3
+popup/item_0/text = "Prueba1"
+popup/item_0/id = 0
+popup/item_0/separator = true
+popup/item_1/text = "Ejemplo2"
+popup/item_1/id = 1
+popup/item_1/separator = true
+popup/item_2/id = 2
+
+[node name="VentanaMenu" type="Panel" parent="CanvasLayer/Control" unique_id=1426994309]
+z_index = 100
+layout_mode = 0
+offset_left = 230.0
+offset_top = 163.0
+offset_right = 728.0
+offset_bottom = 510.0
+theme = SubResource("Theme_ntjof")
+
+[node name="Cerrar" type="Button" parent="CanvasLayer/Control/VentanaMenu" unique_id=1853627126]
+layout_mode = 0
+offset_left = 434.0
+offset_right = 498.0
+offset_bottom = 64.0
+theme_type_variation = &"FlatButton"
+theme_override_colors/font_color = Color(0.8745098, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0.9490196, 0, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0.9490196, 1)
+theme_override_colors/icon_hover_color = Color(1, 1, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_constants/h_separation = 4
+theme_override_font_sizes/font_size = 32
+text = "x"
+
+[node name="LBarraSonido" type="Label" parent="CanvasLayer/Control/VentanaMenu" unique_id=480562099]
+layout_mode = 0
+offset_top = 41.0
+offset_right = 498.0
+offset_bottom = 64.0
+text = "Sonido"
+horizontal_alignment = 1
+
+[node name="BBarraSonido" type="HScrollBar" parent="CanvasLayer/Control/VentanaMenu" unique_id=1592967848]
+layout_mode = 0
+offset_left = 114.0
+offset_top = 64.0
+offset_right = 385.0
+offset_bottom = 86.0
+value = 100.0
+
+[node name="BFullScreen" type="CheckButton" parent="CanvasLayer/Control/VentanaMenu" unique_id=365212680]
+layout_mode = 0
+offset_left = 224.0
+offset_top = 129.0
+offset_right = 268.0
+offset_bottom = 153.0
+
+[node name="LFullScreen" type="Label" parent="CanvasLayer/Control/VentanaMenu" unique_id=1524617552]
+layout_mode = 0
+offset_left = 175.0
+offset_top = 108.0
+offset_right = 315.0
+offset_bottom = 131.0
+text = "Pantalla completa"
+
+[node name="SalirJuego" type="Button" parent="CanvasLayer/Control/VentanaMenu" unique_id=1868116244]
+layout_mode = 0
+offset_left = 131.0
+offset_top = 308.0
+offset_right = 373.0
+offset_bottom = 347.0
+text = "Salir juego"
+
+[node name="MenuButton" type="Button" parent="CanvasLayer/Control" unique_id=1023161475]
+z_index = 4
+layout_mode = 0
+offset_right = 85.0
+offset_bottom = 66.0
+text = "Menu"
+
+[node name="Oscurecer" type="Panel" parent="CanvasLayer/Control" unique_id=1245139906]
+visible = false
+z_index = -7
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 651.0
+mouse_filter = 2

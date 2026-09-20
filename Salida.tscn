@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://beo0xvr3rgmt5"]
+
+[ext_resource type="Script" uid="uid://dtpn8xm1sihdp" path="res://Salida.cs" id="1_1pk4s"]
+
+[node name="Control" type="Control" unique_id=708394453]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1pk4s")
+
+[node name="Puntuacion" type="Label" parent="." unique_id=298522306]
+layout_mode = 0
+offset_left = 91.99994
+offset_top = 37.99997
+offset_right = 295.99994
+offset_bottom = 179.99997
+rotation = 0.003975662
+text = "Puntuacion:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Comentario" type="Label" parent="." unique_id=752367047]
+layout_mode = 0
+offset_left = 474.0
+offset_top = 307.5
+offset_right = 678.0
+offset_bottom = 364.5
+text = "Novato"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Decision" type="Label" parent="." unique_id=635890349]
+layout_mode = 0
+offset_left = 474.0
+offset_top = 364.5
+offset_right = 678.0
+offset_bottom = 482.5
+text = "Volver a jugar: J
+Salir: x"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Continuar" type="Button" parent="." unique_id=2016568754]
+layout_mode = 0
+offset_left = 410.0
+offset_top = 483.0
+offset_right = 496.0
+offset_bottom = 538.0
+text = "Continuar"
+
+[node name="Salida" type="Button" parent="." unique_id=1331599208]
+layout_mode = 0
+offset_left = 678.0
+offset_top = 483.0
+offset_right = 764.0
+offset_bottom = 538.0
+text = "Salir"
